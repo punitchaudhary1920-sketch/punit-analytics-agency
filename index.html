@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punit Analytics | AI & Web Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #09090b; color: #ffffff; }
+        .glow-sky { box-shadow: 0 0 50px -10px rgba(14, 165, 233, 0.2); }
+    </style>
+</head>
+<body class="antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center relative z-10">
+        <div class="text-xl font-bold tracking-tighter text-white">
+            PUNIT<span class="text-sky-500">ANALYTICS</span>
+        </div>
+        <a href="#contact" class="border border-zinc-800 hover:border-sky-500 bg-zinc-900/50 transition-all px-5 py-2 rounded-full text-xs font-semibold tracking-wide">
+            Claim Free Mockup
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 pt-12 pb-24 grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <!-- Left Side: Copy -->
+        <div class="text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/80 text-xs text-sky-400 font-medium mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Built for US Home Service Businesses
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                Stop losing leads <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">after hours.</span>
+            </h1>
+            <p class="text-base md:text-lg text-zinc-400 max-w-lg mb-8 leading-relaxed">
+                We build ultra-fast landing pages integrated with custom AI chat agents. Capture every single emergency booking, quotation request, and lead 24/7 on autopilot.
+            </p>
+            
+            <!-- Quick Features List -->
+            <ul class="space-y-3 mb-8 text-sm text-zinc-300">
+                <li class="flex items-center gap-3">
+                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+                    Instantly respond to inbound customer requests
+                </li>
+                <li class="flex items-center gap-3">
+                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+                    Fully functional layout delivered in 48 hours
+                </li>
+            </ul>
+        </div>
+
+        <!-- Right Side: Live Interactive AI Simulator Widget -->
+        <div class="w-full max-w-md mx-auto bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden glow-sky">
+            <!-- Widget Header -->
+            <div class="bg-zinc-950 px-4 py-3 border-b border-zinc-800 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-sky-500 animate-ping absolute"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-sky-500 relative"></span>
+                    <span class="text-xs font-semibold text-zinc-200">Apex Plumbing AI Assistant</span>
+                </div>
+                <span class="text-[10px] text-zinc-500 uppercase tracking-wider font-bold">Demo App</span>
+            </div>
+            
+            <!-- Chat Area -->
+            <div class="p-4 space-y-4 h-64 overflow-y-auto text-xs bg-zinc-900/40" id="chat-box">
+                <div class="flex gap-2">
+                    <div class="bg-zinc-800 text-zinc-200 px-3 py-2 rounded-xl rounded-tl-none max-w-[85%]">
+                        Hello! Thanks for reaching out to Apex Plumbing. Are you looking to book an emergency repair or get a free service quote?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggestion Interactive Chips -->
+            <div class="px-4 pb-2 flex flex-wrap gap-2" id="chips-container">
+                <button onclick="simulateReply('Emergency Pipe Burst!', 'Oh no! Please drop your Phone Number and Address below instantly. Our emergency team dispatch will call you in less than 5 minutes.')" class="bg-zinc-800/80 hover:bg-sky-950 hover:text-sky-400 border border-zinc-700/60 rounded-full px-3 py-1 text-[11px] text-zinc-300 transition-all">
+                    🚨 Emergency Burst!
+                </button>
+                <button onclick="simulateReply('Need a Water Heater Quote', 'Got it. I can arrange a fast quotation. What is the best email address and name to send the breakdown to?')" class="bg-zinc-800/80 hover:bg-sky-950 hover:text-sky-400 border border-zinc-700/60 rounded-full px-3 py-1 text-[11px] text-zinc-300 transition-all">
+                    💧 Get a Quote
+                </button>
+            </div>
+
+            <!-- Input Box -->
+            <div class="p-3 bg-zinc-950 border-t border-zinc-800 flex gap-2">
+                <input type="text" id="user-input" placeholder="Type a message..." class="bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-1.5 text-xs text-white placeholder-zinc-500 flex-1 focus:outline-none focus:border-sky-500 transition-colors" readonly>
+                <button class="bg-sky-600 px-3 py-1.5 rounded-lg text-xs font-bold text-white opacity-50 cursor-not-allowed">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Intake Form Section -->
+    <section id="contact" class="border-t border-zinc-800 bg-zinc-950 py-20 relative z-10">
+        <div class="container mx-auto px-6 max-w-xl text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Request a Free Custom Mockup</h2>
+            <p class="text-sm text-zinc-400 mb-8">
+                Enter your company info below. We will analyze your current web presence and email you a free operational design mockup within 24 hours.
+            </p>
+            
+            <form class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2">Business Name</label>
+                    <input type="text" placeholder="e.g. Dallas AC Pros" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-sky-500 transition-all">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2">Work Email Address</label>
+                    <input type="email" placeholder="owner@yourcompany.com" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-sky-500 transition-all">
+                </div>
+                <button type="submit" onclick="event.preventDefault(); alert('Pipeline initialized! We will begin your design mockup immediately.');" class="w-full bg-white text-black py-3.5 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-all shadow-lg">
+                    Generate My Free System Mockup
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Simple Simulator Logic Engine -->
+    <script>
+        function simulateReply(userText, botResponse) {
+            const chatBox = document.getElementById('chat-box');
+            const chipsContainer = document.getElementById('chips-container');
+            
+            // 1. Append User Bubble
+            chatBox.innerHTML += `
+                <div class="flex justify-end">
+                    <div class="bg-sky-600 text-white px-3 py-2 rounded-xl rounded-tr-none max-w-[85%] font-medium">
+                        ${userText}
+                    </div>
+                </div>
+            `;
+            
+            // Hide the chips so they can't double click
+            chipsContainer.style.opacity = '0.3';
+            chipsContainer.style.pointerEvents = 'none';
+            
+            // 2. Append Bot Typing Delay simulation
+            setTimeout(() => {
+                chatBox.innerHTML += `
+                    <div class="flex gap-2 animate-fade-in">
+                        <div class="bg-zinc-800 text-zinc-200 px-3 py-2 rounded-xl rounded-tl-none max-w-[85%]">
+                            ${botResponse}
+                        </div>
+                    </div>
+                `;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 800);
+        }
+    </script>
+</body>
+</html>
